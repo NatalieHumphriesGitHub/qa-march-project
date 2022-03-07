@@ -55,4 +55,5 @@ def view_all():
 
 @app.route('/view-rooms')
 def view_rooms():
-    rooms = [str(room) + " : " + str(room.plant) for room in Room.query.order_by(Room.room_name).all()]
+    rooms = [str(room) + " : " + ",".join(plant.plant_name.title()for plant in room.plants_room) for room in Room.query.order_by(Room.room_name).all()]    #this is different from above because each plant can only have 1 room
+    return render_template ('view-rooms.html', rooms = rooms)
