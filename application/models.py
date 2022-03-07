@@ -17,5 +17,4 @@ class Plant(db.Model):
     room_id = db.Column(db.Integer, db.ForeignKey('room.pk'))
     def __str__(self):
         return f"{self.pk}: {self.plant_name.title()}: Plant description - {self.plant_desc.capitalize()}: {self.flowers.capitalize()} flower: {self.watering_req.capitalize()} watering required"
-    def str2(self):
-        return self.plant_name.title()
+    
