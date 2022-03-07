@@ -1,11 +1,11 @@
-from flask_wtf import Flaskform
+from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, SelectField, DateField, SubmitField
 from wtforms.validators import DataRequired, ValidationError
 
 
 #form to add plants to the database
 
-class AddPlant(Flaskform):
+class AddPlant(FlaskForm):
     plant_name = StringField("Plant Name", validators=[DataRequired()])
     plant_desc = StringField("Plant Description")
     flowers = SelectField("Does it flower?", choices = [('Yes', 'does'), ('No', 'does not')])
@@ -16,7 +16,7 @@ class AddPlant(Flaskform):
 
 #form to add rooms to the database
 
-class CreateRoom(Flaskform):
+class AddRoom(FlaskForm):
     room_name = StringField("Room Name")
     submit = SubmitField("Add Room")
 

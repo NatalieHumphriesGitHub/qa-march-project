@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h2>Add a new Room Type</h2>
+<br>
+<div class="form">
+    <form method = "POST" action="">
+
+            {{ form.hidden_tag() }}
+            <br>
+            {{ form.room_name.label }}  {{ form.room_name }}
+            <br>
+            {{ form.submit }}
+    </form>
+</div>
+
+{% endblock body %}
