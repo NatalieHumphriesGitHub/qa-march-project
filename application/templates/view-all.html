@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h2>Please see below for a list of your plants:</h2>
+<br>
+{% for plant in plants %}
+{{ plant }}
+<br>
+{% endfor %}
+
+{% endblock body%}

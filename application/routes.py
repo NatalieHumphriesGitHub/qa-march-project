@@ -43,10 +43,9 @@ def add_plant():
     return render_template('add-plant.html', form = form)
 
 
+#view all plants
 
-# # plant_name = StringField("Plant Name", validators=[DataRequired()])
-#     plant_desc = StringField("Plant Description")
-#     flowers = SelectField("Does it flower?", choices = [('Yes', 'does'), ('No', 'does not')])
-#     watering_req = SelectField("How much watering is required", choices = [('A little', 'low'), ('Some', 'medium'), ('A lot', 'high')])
-#     room_id = SelectField("Which room is it in?", choices = [])
-#     submit = SubmitField("Add plant")
+@app.route('/view-all')
+def view_all():
+    plants = [str(plant) + ": Located in the " + str(plant.room).lower() for plant in Plant.query.order_by(Plant.pk).all()]
+    return render_template ('view-all.html', plants = plants)
