@@ -14,6 +14,6 @@ class Plant(db.Model):
     plant_desc = db.Column(db.String(500))
     flowers = db.Column(db.String(10))
     watering_req = db.Column(db.String(20))
-    room_id = db.Column(db.Integer, db,ForeignKey('room.pk'))
-def__str__(self):
+    room_id = db.Column(db.Integer, db.ForeignKey('room.pk'))
+def __str__(self):
     return f"{plant_name}: {plant_desc}: {flowers} flowers: {watering_req} watering required."
