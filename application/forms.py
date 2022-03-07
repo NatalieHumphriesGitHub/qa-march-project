@@ -8,8 +8,8 @@ from wtforms.validators import DataRequired, ValidationError
 class AddPlant(FlaskForm):
     plant_name = StringField("Plant Name", validators=[DataRequired()])
     plant_desc = StringField("Plant Description")
-    flowers = SelectField("Does it flower?", choices = [('Yes', 'does'), ('No', 'does not')])
-    watering_req = SelectField("How much watering is required", choices = [('A little', 'low'), ('Some', 'medium'), ('A lot', 'high')])
+    flowers = SelectField("Does it flower?", choices = [('does', 'Yes'), ('does not', 'No')])
+    watering_req = SelectField("How much watering is required", choices = [('low', 'A little'), ('medium', 'Some'), ('high', 'A lot')])
     room_id = SelectField("Which room is it in?", choices = [])
     submit = SubmitField("Add plant")
 
