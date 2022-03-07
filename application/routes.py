@@ -49,3 +49,10 @@ def add_plant():
 def view_all():
     plants = [str(plant) + ": Located in the " + str(plant.room).lower() for plant in Plant.query.order_by(Plant.pk).all()]
     return render_template ('view-all.html', plants = plants)
+
+
+#view plants ordered by room
+
+@app.route('/view-rooms')
+def view_rooms():
+    rooms = [str(room) + " : " + str(room.plant) for room in Room.query.order_by(Room.room_name).all()]
