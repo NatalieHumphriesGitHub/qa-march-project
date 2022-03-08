@@ -11,7 +11,7 @@ class AddPlant(FlaskForm):
     flowers = SelectField("Does it flower?", choices = [('does', 'Yes'), ('does not', 'No')])
     watering_req = SelectField("How much watering is required", choices = [('low', 'A little'), ('medium', 'Some'), ('high', 'A lot')])
     room_id = SelectField("Which room is it in?", choices = [])
-    submit = SubmitField("Add plant")
+    submit = SubmitField("Submit")
 
 
 #form to add rooms to the database
