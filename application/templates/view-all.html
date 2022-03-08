@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h2>Please see below for a list of your plants:</h2>
+<br>
+{% for plant in plants %}
+{{ plant }} 
+<br>
+{% endfor %}
+<br>
+<br>
+<a href = "{{ url_for('home') }}" >Back to homepage</a>
+
+{% endblock body%}

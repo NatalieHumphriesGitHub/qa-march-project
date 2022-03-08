@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h1>What would you like to do today?</h1>
+<br>
+<a href = "{{ url_for('view_all') }}" >View your plants</a>
+<br>
+<br>
+<a href = "{{ url_for('add_plant') }}" >Add a new plant</a>
+<br>
+<br>
+<a href = "{{ url_for('add_room') }}" >Add a new room</a>
+<br>
+<br>
+<a href = "{{ url_for('choose_plant_update') }}" >Update or delete a plant</a>
+{% endblock body %}

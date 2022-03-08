@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h2>Update a Plant</h2>
+<br>
+<div class = "form">
+    <form method ="POST" action ="">
+
+        {{ form.hidden_tag() }}
+        <br>
+        {{ form.plant_name.label }} {{ form.plant_name }}
+        <br>
+        {{ form.plant_desc.label }} {{ form.plant_desc }}
+        <br>
+        {{ form.flowers.label }} {{ form.flowers }}
+        <br>
+        {{ form.watering_req.label }} {{ form.watering_req }}
+        <br>
+        {{ form.room_id.label }} {{ form.room_id }}
+        <br>
+        {{ form.submit }}
+</form>
+</div>
+
+{% endblock body %}

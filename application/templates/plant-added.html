@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h2>Plant has been {{ title }} successfully!</h2>
+<br>
+<a href = "{{ url_for('add_plant') }}" >{{ title2 }} another plant</a>
+<br>
+<br>
+<a href = "{{ url_for('home') }}" >Back to homepage</a>
+
+
+{% endblock body %}
