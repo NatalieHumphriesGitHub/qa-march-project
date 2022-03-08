@@ -68,7 +68,7 @@ def update_plant(pk):
     form = AddPlant()
     form.room_id.choices.extend([(room.pk, str(room)) for room in rooms])
     if request.method == 'POST':
-        plant.plant_name = form.plant_name.data
+        plant.plant_name = form.plant_name.data                                                             #you need to call the specific information by putting plant.in front of the field name
         plant.plant_desc = form.plant_desc.data
         plant.flowers = form.flowers.data
         plant.watering_req = form.watering_req.data
@@ -76,3 +76,19 @@ def update_plant(pk):
         db.session.commit()
         return render_template('plant-added.html', title = "updated", title2 = "Update")
     return render_template('update-plant.html', form = form)
+
+#find a plant to update
+@app.route('/choose-plant-update')
+def choose_plant_update():
+    plants = Plant.query.all()
+    return render_template ('choose-plant-update.html', plants = plants)
+
+
+#delete a plant
+
+@app.route('/delete-plant/<int:pk>')
+def delete_plant(pk):
+    plant = Plant.query.get(pk)
+    db.session.delete(plant)
+    db.session.commit()
+    return render_template('plant-added.html', title = 'deleted', title2 = 'Add' )

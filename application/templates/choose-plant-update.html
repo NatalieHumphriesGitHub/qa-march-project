@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h2>Which plant would you like to update?</h2>
+<br>
+{% for plant in plants %}
+{{ plant.__str__() + " : " + plant.room.__str__() }}   <a href="{{ url_for('update_plant', pk=plant.pk) }}">Update Plant</a> || <a href="{{ url_for('delete_plant', pk=plant.pk) }}">Delete Plant</a>
+<br>
+{% endfor %}
+<br>
+<br>
+<a href = "{{ url_for('home') }}" >Back to homepage</a>
+
+{% endblock body %}
