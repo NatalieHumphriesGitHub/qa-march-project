@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h2>Search Results</h2>
+
+<p>Please see below for the search results for the word "{{ keyword }}"</p>
+        {% for r in res %}
+        {{ r }}
+        <br>
+        {% endfor %}
+        
+{% endblock body %}
