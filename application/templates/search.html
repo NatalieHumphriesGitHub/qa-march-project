@@ -2,10 +2,12 @@
 {% block body %}
 <h2>Search Results</h2>
 
-<p>Please see below for the search results for the word "{{ keyword }}"</p>
-        {% for r in res %}
-        {{ r }}
-        <br>
-        {% endfor %}
-        
+<p>Please see below the results for "{{ keyword }}"
+<br>
+
+{% for res in data %}
+ {{ res }}
+
+ {% endfor %}
+              
 {% endblock body %}
