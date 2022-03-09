@@ -3,14 +3,14 @@ from application import app, db
 from application.models import Room, Plant   
 from application.forms import AddPlant, AddRoom                            
 
-#homepage route
+#homepage route - test created
 
 @app.route('/')
 def home():
     return render_template('index.html')
 
 
-#add a room type route
+#add a room type route - test created
 
 @app.route('/add-room', methods = ['GET', 'POST'])
 def add_room():
@@ -23,7 +23,7 @@ def add_room():
         return render_template('room-added.html')
     return render_template('add-room.html', form = form)
 
-#add a plant route
+#add a plant route - test created
 
 @app.route('/add-plant', methods = ['GET', 'POST'])
 def add_plant():
@@ -43,7 +43,7 @@ def add_plant():
     return render_template('add-plant.html', form = form)
 
 
-#view all plants
+#view all plants - test created
 
 @app.route('/view-all')
 def view_all():
@@ -51,7 +51,7 @@ def view_all():
     return render_template ('view-all.html', plants = plants)
 
 
-#view plants ordered by room
+#view plants ordered by room - test created
 
 @app.route('/view-rooms')
 def view_rooms():
@@ -59,7 +59,7 @@ def view_rooms():
     return render_template ('view-rooms.html', rooms = rooms)
 
 
-#update plants information
+#update plants information - test created
 
 @app.route('/update-plant/<int:pk>', methods = ['GET', 'POST'])
 def update_plant(pk):
@@ -88,7 +88,16 @@ def choose_plant_update():
 
 @app.route('/delete-plant/<int:pk>')
 def delete_plant(pk):
-    plant = Plant.query.get(pk)
+    plant = Plant.query.get(pk)                                             
     db.session.delete(plant)
     db.session.commit()
     return render_template('plant-added.html', title = 'deleted', title2 = 'Add' )
+
+#search for a keyword
+
+
+@app.route('/search=<keyword>')
+def search(keyword):
+    data = db.session.execute(f"SELECT * FROM plant WHERE plant_name LIKE '%{keyword}%'")
+    results = '<br>'.join([str(res) for res in data])
+    return render_template('search.html', keyword = keyword, results = results)
