@@ -143,6 +143,6 @@ class TestDeletePlant(TestBase):
 
 class TestSearchWord(TestBase):
     def test_search_word(self):
-        response = self.client.get(url_for(search, keyword = "Test Plant"))
+        response = self.client.get(url_for('search', keyword = "Test Plant"))
         self.assert200(response)
         self.assertIn(b'A sample plant for testing', response.data)
