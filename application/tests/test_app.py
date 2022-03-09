@@ -74,6 +74,18 @@ class TestAddRoom(TestBase):
         self.assertIn(b'Room added successfully!', response.data) #check success message is correct
         self.assertNotEqual(Room.query.filter_by(room_name = "New Room").first(),None) #checking the db for the new info this is checking that when you filter the rooms for the new plant, it is not equal to none)
 
+#testing for validator for duplicate rooms 
+
+class TestDuplicateRoom(TestBase):
+    def test_duplicate_room_post(self):
+        response = self.client.post(
+            url_for('add_room'),
+            data = dict(room_name = "Test Room"))
+        self.assert200(response)
+        self.assertIn(b'Room already exists', response.data)
+        self.assertEqual(len(Room.query.filter_by(room_name="Test Room").all()), 1)
+
+
 # #testing for adding a new plant
 
 class TestAddPlant(TestBase):
@@ -143,6 +155,9 @@ class TestDeletePlant(TestBase):
 
 class TestSearchWord(TestBase):
     def test_search_word(self):
-        response = self.client.get(url_for('search', keyword = "Test Plant"))
+        response = self.client.post(
+            url_for('search'),
+            data = dict(keyword = "Test Plant"))
         self.assert200(response)
         self.assertIn(b'A sample plant for testing', response.data)
+
