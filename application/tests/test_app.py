@@ -151,13 +151,17 @@ class TestDeletePlant(TestBase):
         self.assertIn(b'Plant has been deleted successfully!', response.data)
         self.assertEqual(Plant.query.filter_by(plant_name = 'Test Plant2').first(),None)
 
-#testing for keyword search
+#testing for keyword search - get and post
 
 class TestSearchWord(TestBase):
-    def test_search_word(self):
+    def test_search_word_post(self):
         response = self.client.post(
             url_for('search'),
             data = dict(keyword = "Test Plant"))
         self.assert200(response)
         self.assertIn(b'A sample plant for testing', response.data)
 
+    def test_search_word_get(self):
+        response = self.client.get(url_for('search'))
+        self.assert200(response)
+        self.assertIn(b"Enter your keyword", response.data)
