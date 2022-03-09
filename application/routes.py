@@ -1,7 +1,7 @@
 from flask import redirect, url_for, render_template, request                                               
 from application import app, db                                                   
 from application.models import Room, Plant   
-from application.forms import AddPlant, AddRoom                            
+from application.forms import AddPlant, AddRoom, SearchKeyWord                           
 
 #homepage route - test created
 
@@ -14,14 +14,18 @@ def home():
 
 @app.route('/add-room', methods = ['GET', 'POST'])
 def add_room():
+    message = None
     form = AddRoom()
     if request.method == 'POST':
+        if not form.validate_on_submit():
+            message = form.room_name.errors[-1]
+            return render_template('add-room.html', form = form, message = message)
         room_name = form.room_name.data
         new_room = Room(room_name = room_name)
         db.session.add(new_room)
         db.session.commit()
         return render_template('room-added.html')
-    return render_template('add-room.html', form = form)
+    return render_template('add-room.html', form = form, message = message)
 
 #add a plant route - test created
 
@@ -93,11 +97,17 @@ def delete_plant(pk):
     db.session.commit()
     return render_template('plant-added.html', title = 'deleted', title2 = 'Add' )
 
+
 #search for a keyword
 
-
-@app.route('/search=<keyword>')
-def search(keyword):
-    data = db.session.execute(f"SELECT * FROM plant WHERE plant_name LIKE '%{keyword}%'")
-    results = '<br>'.join([str(res) for res in data])
-    return render_template('search.html', keyword = keyword, results = results)
+@app.route('/search', methods = ['GET', 'POST'])
+def search():
+    plant = Plant.query.all()
+    rooms = Room.query.all()
+    form = SearchKeyWord()
+    if request.method == 'POST':
+        keyword = form.keyword.data
+        data = db.session.execute(f"SELECT * FROM plant WHERE plant_name LIKE '%{keyword}%'")
+        results = '<br>'.join([str(res) for res in data])
+        return render_template('search-results.html', keyword = keyword, results = results)
+    return render_template('search.html', form = form)
