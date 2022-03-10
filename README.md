@@ -118,6 +118,10 @@ Integration testing via Selenium was not used in this instance as there was not 
 
 Tests were created for each area of functionality, testing both the GET and POST methods if required, which were automatically run through Jenkins. This provided 100% testing coverage as can be seen below.
 
+![Test Screenshot](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/53dfabf74e90bad773ed7e2d772200e8ff571307/Tests%202.png)
+
+![Test Coverage Report](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/53dfabf74e90bad773ed7e2d772200e8ff571307/Test%20Coverage%20Report.png)
+
 ## The App - The House of Plants
 
 The homepage presents a number of options to the user.
