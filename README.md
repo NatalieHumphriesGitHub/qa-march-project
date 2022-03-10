@@ -1,9 +1,19 @@
 # Qa March Project
 
 ## Introduction
-This repository contains my QA Dev Fundamentals Project. The purpose of this readme is to outline how I met the key deliverables of the assigned project with supporting documentation. 
+This repository contains my QA Dev Fundamentals Project. The purpose of this ReadMe is to outline how I met the key deliverables of the assigned project with supporting documentation. 
 
-## Contents (insert contents at the end)
+## Contents
+
+1. [Project Brief](#Project-Brief)
+2. [App Design](#App-Design)
+3. [CI Pipeline](#CI-Pipeline)
+4. [Risk Assessment](#Risk-Assessment)
+5. [Testing](#Testing)
+6. [The App - House of Plants](#The-App-House-of-Plants)
+7. [Known Issues](#Known-Issues)
+8. [Future Work](#Future-Work)
+
 
 ## Project Brief
 
@@ -19,9 +29,9 @@ The purpose of this project was to demonstrate my abilities in the following are
 * Cloud Fundamentals
 * Databases
 
-The overall objective was to create an application which could create, read, update and delete (CRUD) using the knowledge that had been learnt over the past 4 weeks. The application was to be written in Python using the Flask micro-framework and had to contain a relational database with at least 2 tables of data related to each other. 
+The overall objective was to create an application which could create, read, update and delete data (CRUD) using the knowledge that had been learnt over the past 4 weeks. The application was to be written in Python using the Flask micro-framework and had to contain a relational database with at least 2 tables of data related to each other. 
 
-The design element of the project describing the architecture had to be documented alongside a detailed Risk Assessment. The project had to be tracked using a Trello board or equivalent, recording any issues that arose and it was advised that the MVP concept be considered. Test suites for all the functionality had to be created with the requirement for high coverage of tests, automated testing and documentation of tests.  
+The design element of the project describing the architecture had to be documented alongside a detailed risk assessment. The project had to be tracked using a Trello board or equivalent, recording any issues that arose and it was advised that the MVP concept be considered. Test suites for all the functionality had to be created with the requirement for a high test coverage, automated testing and documentation of tests.  
 
 The code had to be integrated via a Version Control System using the Feature Branch model then built via a CI server and deployed to a cloud-based virtual machine.
 
@@ -64,7 +74,7 @@ This is illustrated by the ERD diagram below:
 
 The key requirements of a CI pipeline are:
 
-- A clear way to track the project and its requirements - usually using software specifically designed for this
+- Clear and tracked project requirements - usually using software specifically designed for this
 - A version control system that maintains a single source code repository for the project
 - Automated building of the application
 - Automated testing with error reports generated
@@ -82,7 +92,7 @@ To plan my project, I divided it into three sections:
 
 For each section, I wrote down the tasks that were required to fulfil each requirement. I also categorised my user stories into MVP and enhancements so that I could be clear about what needed to be done to ensure that the MVP was created first (basic MoSCow prioritisation). Usually at this stage in order to ensure work is divided evenly, story points would be assigned to each task. In this case however, as it was only myself doing all the tasks, I decided story points were not necessary. 
 
-All the tasks were then put in a backlog to be assigned into sprints. I created 4 sprints with clear timelines and goals and within each sprint, the tasks were set out on a kanban board, I updated the progress of tasks and recorded any issues as comments as I went along. 
+All the tasks were then put in a backlog to be assigned into sprints. I created 4 sprints with clear timelines and goals and within each sprint, the tasks were set out on a kanban board. The progress and status of the tasks were updated as the tasks were completed and any issues were recorded as comments.
 
 My project can be found [here.](https://numphries.atlassian.net/jira/software/projects/BP/boards/5)
 
@@ -92,7 +102,7 @@ My project can be found [here.](https://numphries.atlassian.net/jira/software/pr
 
 **Version Control System**
 
-I used Git as my VCS and stored my source code in a repository on GitHub. I built specific features on feature branches which were deleted after they were pushed to the dev branch which was set as the default branch so that nothing was pushed to main accidentally. The main branch was updated periodically during the project and also when the application was finialised and finished. Below is a snapshot of the network graph of the repository. A webhook was also set up to Jenkins (the build/test server) so that tests were automatically run after each commit to the repo. 
+I used git as my VCS and stored my source code in a repository on GitHub. I built specific features on feature branches which were deleted after they were pushed to the dev branch, which was set as the default branch so that nothing was pushed to main accidentally. The main branch was updated periodically during the project and also when the application was finalised and finished. Below is a snapshot of the network graph of the repository. A webhook was also set up to Jenkins (the build/test server) so that tests were automatically run after each commit to the repository. 
 
 ![Network Graph](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/Network%20Graph.png)
 
@@ -104,9 +114,16 @@ The application was built using Flask and written in Python. A venv environment 
 
 Jenkins was used for the automation of the build and testing. A freestyle project was set up, with test scripts saved into an sh file on the repository which were ran every time a commit was pushed to the repository. Artefact reports were generated after each build and if the build was successful, Jenkins automatically deployed the application using Gunicorn.
 
+Below shows the commands that Jenkins executed and the confirmation of a successful build and deployment.
+
+![Jenkins](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/502e41ce211ff7fe9598b4ad85e312e27b23aa85/Jenkins%20Execute%20Shell.png)
+
+![Jenkins success](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/502e41ce211ff7fe9598b4ad85e312e27b23aa85/Successful%20deployment.png)
+
+
 ## Risk Assessment
 
-Before the project was started, a risk assessment was undertaken to identify any risks or blockers to the project and how they could be mitigated. The risk assessment was split into four key sections: security risks, data risks, code risks and reliability risks. Any potential risks were them categorised and given a score based on their likelihood and what impact it would have on the project if it happened. Measures to then control or mitigate these risks were recorded and the likelihood and impact were rescored. These measures and controls were then integrated into the planning of the project. The risk assessment and scoring matrix are below.
+Before the project was started, a risk assessment was undertaken to identify any risks or blockers to the project and how they could be mitigated. The risk assessment was split into four key sections: security risks, data risks, code risks and reliability risks. Any potential risks were then categorised and given a score based on their likelihood and what impact they would have on the project if they occurred. Measures to then control or mitigate these risks were recorded and the likelihood and impact were rescored. These measures and controls were then integrated into the planning of the project. The risk assessment and scoring matrix are below.
 
 ![Risk Assessment](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/Risk%20Assessment.png)
 
@@ -140,7 +157,7 @@ When adding a plant, the user completes the information about the plant and can 
 
 ![Add plant screenshot](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/Add%20a%20new%20plant.png)
 
-View all plants allows the user to see all the plants that have been input into the database orderd by their plant id number, along with the associated information and their location.
+View all plants allows the user to see all the plants that have been input into the database ordered by their plant id number, along with the associated information and their room location.
 
 ![view all plants](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/View%20All%20Plants.png)
 
