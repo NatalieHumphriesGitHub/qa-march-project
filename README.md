@@ -109,6 +109,11 @@ I used git as my VCS and stored my source code in a repository on GitHub. I buil
 **Building Environment**
 
 The application was built using Flask and written in Python. A venv environment was created which meant that any programs installed were kept separate from other applications and the application environment was contained. The application was built on a virtual machine from Google Cloud Platform running Ubunto Pro 20.04. 
+For improved database functionality and storage capacity it was linked with a remote database set up on a MySQL server. The screenshots below show the successful transfer of data from the application into MySQL.
+
+![MySQL-plant](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/8df1505ad31de2241a11d7264f209031de15b6be/images/SQL%20plant%20table.png)
+
+![Mysql-rooms](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/8df1505ad31de2241a11d7264f209031de15b6be/images/SQL%20room%20table.png)
 
 **Automated Build and Testing**
 
