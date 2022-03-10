@@ -1,7 +1,7 @@
 # Qa March Project
 
 ## Introduction
-This repository contains my QA Dev Fundamentals Project. The purpose of this read.me is to outline how I met the key deliverables of the assigned project with supporting documentation. 
+This repository contains my QA Dev Fundamentals Project. The purpose of this readme is to outline how I met the key deliverables of the assigned project with supporting documentation. 
 
 ## Contents (insert contents at the end)
 
@@ -31,7 +31,7 @@ As a recent collector of plants, I chose to design a plant database for my house
 
 This relationship would allow me to ensure that I could keep an accurate record of what plants were kept in each room of my house. The relationship is demonstrated in the below table.
 
-INSERT the ERD diagram.
+![ERD diagram](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/Current%20ERD.png)
 
 The functionality of the MVP was as follows: 
 
@@ -58,6 +58,8 @@ Moving forwards, the goal would be to improve the application as below:
 
 This is illustrated by the ERD diagram below: 
 
+![Future ERD Diagram](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/Future%20ERD.png)
+
 ## CI Pipeline
 
 The key requirements of a CI pipeline are:
@@ -72,7 +74,6 @@ The key requirements of a CI pipeline are:
 **Tracking**
 
 I chose to use Jira software to plan and track this project because I was familiar with it and it allowed me to work in a KanBan style within sprints. 
-
 To plan my project, I divided it into three sections:
 
 - user stories i.e. what I wanted my users to be able to do and why
@@ -83,15 +84,17 @@ For each section, I wrote down the tasks that were required to fulfil each requi
 
 All the tasks were then put in a backlog to be assigned into sprints. I created 4 sprints with clear timelines and goals and within each sprint, the tasks were set out on a kanban board, I updated the progress of tasks and recorded any issues as comments as I went along. 
 
-Project Roadmap
+My project can be found [here.](https://numphries.atlassian.net/jira/software/projects/BP/boards/5)
 
+![Project Roadmap](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/Project%20Roadmap.png)
 
-Example Sprint Layout
-
+![Example Sprint Layout](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/Example%20Sprint.png)
 
 **Version Control System**
 
 I used Git as my VCS and stored my source code in a repository on GitHub. I built specific features on feature branches which were deleted after they were pushed to the dev branch which was set as the default branch so that nothing was pushed to main accidentally. The main branch was updated periodically during the project and also when the application was finialised and finished. Below is a snapshot of the network graph of the repository. A webhook was also set up to Jenkins (the build/test server) so that tests were automatically run after each commit to the repo. 
+
+![Network Graph](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/Network%20Graph.png)
 
 **Building Environment**
 
@@ -105,6 +108,8 @@ Jenkins was used for the automation of the build and testing. A freestyle projec
 
 Before the project was started, a risk assessment was undertaken to identify any risks or blockers to the project and how they could be mitigated. The risk assessment was split into four key sections: security risks, data risks, code risks and reliability risks. Any potential risks were them categorised and given a score based on their likelihood and what impact it would have on the project if it happened. Measures to then control or mitigate these risks were recorded and the likelihood and impact were rescored. These measures and controls were then integrated into the planning of the project. The risk assessment and scoring matrix are below.
 
+![Risk Assessment](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/Risk%20Assessment.png)
+
 ## Testing
 
 Thorough testing is integral to the success of the application. For this project, unit testing was used. Unit testing is where a test for each part of the app's functionality is created, to ensure that the application is working as expected.
@@ -113,41 +118,39 @@ Integration testing via Selenium was not used in this instance as there was not 
 
 Tests were created for each area of functionality, testing both the GET and POST methods if required, which were automatically run through Jenkins. This provided 100% testing coverage as can be seen below.
 
-## The App
-
-The House of Plants App. 
+## The App - The House of Plants
 
 The homepage presents a number of options to the user.
 
-Add homepage screenshot
+![Homepage](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/HomePage.png)
 
 The user can:
-Add a plant
-Add a room
-View all plants
-View all rooms
-Update/delete plants
-Search
+* Add a plant
+* Add a room
+* View all plants
+* View all rooms
+* Update/delete plants
+* Search
 
 When adding a plant, the user completes the information about the plant and can view a dropdown list of the rooms that have already been set up. Once the plant has been added successfully, the user is invited to add another plant or return to the homepage. When adding a room, the user is invited to add another room or return to the homepage. A validation error will show if the user tries to add a room that already exists in the database. 
 
-Add plant screenshot
+![Add plant screenshot](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/Add%20a%20new%20plant.png)
 
 View all plants allows the user to see all the plants that have been input into the database orderd by their plant id number, along with the associated information and their location.
 
-add view all plants
+![view all plants](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/View%20All%20Plants.png)
 
 View all rooms shows the rooms and the plants that are within them.
 
-add view all rooms
+![view all rooms](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/View%20Rooms.png)
 
 Update/delete plants shows a list of all the plants currently in the database with links beside them to either update or delete them.
 
-add update plants
+![update plants](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/Update%20plants.png)
 
 Search allows the user to input a keyword and the results will then show.
 
-add search screenshot
+![search screenshot](https://github.com/NatalieHumphriesGitHub/qa-march-project/blob/3ec97a59743bcd67b7f8d75a5f98936dbf4195bd/Search%20results.png)
 
 ## Known Issues:
 
