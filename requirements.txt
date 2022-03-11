@@ -5,4 +5,9 @@ wtforms
 pytest
 flask-testing
 pytest-cov
+<<<<<<< HEAD
 pymysql
+=======
+gunicorn
+pymysql
+>>>>>>> 68006e32434f94412782b7e36ae678cb67745493
