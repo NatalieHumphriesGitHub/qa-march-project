@@ -7,3 +7,4 @@ flask-testing
 pytest-cov
 gunicorn
 pymysql
+markupsafe==2.0.1
