@@ -1,4 +1,4 @@
-# QA March Project
+# QA March Project.
 
 ## Introduction
 This repository contains my QA Dev Fundamentals Project. The purpose of this ReadMe is to outline how I met the key deliverables of the assigned project with supporting documentation. 
