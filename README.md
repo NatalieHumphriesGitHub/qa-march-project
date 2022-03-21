@@ -188,5 +188,5 @@ The sentence structure for showing the plant's location says - "located in the {
 
 ## Future Work:
 
-As discussed above, future work would be to fix all known issues, add additional information about the rooms and add a propagated plants table. The html could also be improved as I would like to add pictures of the plants and have a more user-friendly and modern interface. 
+As discussed above, future work would be to fix all known issues, add additional information about the rooms and add a propagated plants table. The html could also be improved as I would like to add pictures of the plants in the database and have a more user-friendly and modern interface. 
 
