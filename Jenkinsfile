@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh "echo @    driver: overlay >> docker-compose.yaml"
                 sh "scp ./docker-compose.yaml jenkins@docker-manager:/home/jenkins/docker-compose.yaml"
-                sh "scp ./nginx.conf jenkins@docker-manager:/home/jenkins/nginx/nginx.conf"
+                sh "scp ./nginx/nginx.conf jenkins@docker-manager:/home/jenkins/nginx.conf"
                 sh "ssh jenkins@docker-manager < deploy.sh"
             }
         }
