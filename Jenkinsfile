@@ -6,7 +6,6 @@ pipeline {
                 sh "bash test.sh"
             }
         }
-    }
         stage('build and push') {
             environment {
                 DOCKER_CREDS = credentials('docker-creds')
