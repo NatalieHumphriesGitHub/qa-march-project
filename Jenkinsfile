@@ -16,10 +16,10 @@ pipeline {
                 sh "docker-compose push"
             }
         }
+    }
     post {
         always {
             archiveArtifacts artifacts:"htmlcov/*"
         }
-    }  
     }
 }
