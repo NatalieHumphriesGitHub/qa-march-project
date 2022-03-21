@@ -7,6 +7,16 @@ pipeline {
             }
         }
     }
+    stage('build and push') {
+        environment {
+            DOCKER_CREDS = credentials('docker-creds')
+        }
+        steps {
+            sh "docker-compose build --parallel"
+            sh "docker login -u ${DOCKER-CREDS_USR} -P ${DOCKER_CREDS_PSW}"
+            sh "docker-compose push"
+        }
+    }
     post {
         always {
             archiveArtifacts artifacts:"htmlcov/*"

@@ -8,3 +8,4 @@ pytest-cov
 gunicorn
 pymysql
 markupsafe==2.0.1
+itsdangerous==2.0.1
