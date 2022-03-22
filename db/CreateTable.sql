@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS room
              (
                           pk         INTEGER NOT NULL AUTO_INCREMENT,
                           room_name VARCHAR(30) NOT NULL,
-                          PRIMARY KEY (id)
+                          PRIMARY KEY (pk)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE IF NOT EXISTS plant
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS plant
                           flowers    VARCHAR(10) NOT NULL,
                           watering_req VARCHAR(20) NOT NULL,
                           fk_room_pk INTEGER NOT NULL,   
-                          PRIMARY KEY (id),
+                          PRIMARY KEY (pk),
                           FOREIGN KEY (fk_room_pk) REFERENCES room(pk)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
